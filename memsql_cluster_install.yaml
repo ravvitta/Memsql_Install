@@ -1,0 +1,380 @@
+license: BGI3YjA5ZTI5OGRmYzQ4ODE4MmVmMGZkNzZjYjZiZjQ0AAAAAAAAAAAAAAAAAAAAAAswNAIYAxwTIOlsscxurJD30CcK2tvIDGDhNWJbAhghPD9s3k0VFaEGSac+OCmwTin6gppMRhQAAA==
+high_availability: true
+memsql_server_version: 6.7.22
+package_type: rpm
+hosts:
+- hostname: {MA01_INTERNAL_IP}
+  localhost: true
+  nodes:
+  - register: false
+    role: Master
+    config:
+      datadir: /data/memsql/Master/data
+      password: gomemsql
+      port: 3306
+- hostname: {CA00_INTERNAL_IP}
+  ssh:
+    host: {CA00_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Aggregator
+    config:
+      datadir: /data/memsql/Aggregator/data
+      password: gomemsql
+      port: 3306    
+- hostname: {CA01_INTERNAL_IP}
+  ssh:
+    host: {CA01_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Aggregator
+    config:
+      datadir: /data/memsql/Aggregator/data
+      password: gomemsql
+      port: 3306    
+- hostname: {CA02_INTERNAL_IP}
+  ssh:
+    host: {CA02_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Aggregator
+    config:
+      datadir: /data/memsql/Aggregator/data
+      password: gomemsql
+      port: 3306    
+- hostname: {CA03_INTERNAL_IP}
+  ssh:
+    host: {CA03_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Aggregator
+    config:
+      datadir: /data/memsql/Aggregator/data
+      password: gomemsql
+      port: 3306    
+- hostname: {CA04_INTERNAL_IP}
+  ssh:
+    host: {CA04_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Aggregator
+    config:
+      datadir: /data/memsql/Aggregator/data
+      password: gomemsql
+      port: 3306    
+- hostname: {CA05_INTERNAL_IP}
+  ssh:
+    host: {CA05_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Aggregator
+    config:
+      datadir: /data/memsql/Aggregator/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF00_INTERNAL_IP}
+  ssh:
+    host: {LF00_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 1  
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306  
+- hostname: {LF01_INTERNAL_IP}
+  ssh:
+    host: {LF01_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF02_INTERNAL_IP}
+  ssh:
+    host: {LF02_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF03_INTERNAL_IP}
+  ssh:
+    host: {LF03_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF04_INTERNAL_IP}
+  ssh:
+    host: {LF04_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF05_INTERNAL_IP}
+  ssh:
+    host: {LF05_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF06_INTERNAL_IP}
+  ssh:
+    host: {LF06_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF07_INTERNAL_IP}
+  ssh:
+    host: {LF07_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf2/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF08_INTERNAL_IP}
+  ssh:
+    host: {LF08_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF09_INTERNAL_IP}
+  ssh:
+    host: {LF09_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF10_INTERNAL_IP}
+  ssh:
+    host: {LF10_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF11_INTERNAL_IP}
+  ssh:
+    host: {LF11_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF12_INTERNAL_IP}
+  ssh:
+    host: {LF12_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF13_INTERNAL_IP}
+  ssh:
+    host: {LF13_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF14_INTERNAL_IP}
+  ssh:
+    host: {LF14_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF15_INTERNAL_IP}
+  ssh:
+    host: {LF15_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF16_INTERNAL_IP}
+  ssh:
+    host: {LF16_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF17_INTERNAL_IP}
+  ssh:
+    host: {LF17_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF18_INTERNAL_IP}
+  ssh:
+    host: {LF18_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF19_INTERNAL_IP}
+  ssh:
+    host: {LF19_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF20_INTERNAL_IP}
+  ssh:
+    host: {LF20_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF21_INTERNAL_IP}
+  ssh:
+    host: {LF21_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF22_INTERNAL_IP}
+  ssh:
+    host: {LF22_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF23_INTERNAL_IP}
+  ssh:
+    host: {LF23_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306
+- hostname: {LF24_INTERNAL_IP}
+  ssh:
+    host: {LF24_INTERNAL_IP}
+    private_key: /home/ec2-user/id_rsa
+  nodes:
+  - register: false
+    role: Leaf
+    availability_group: 2
+    config:
+      datadir: /data/memsql/Leaf/data
+      password: gomemsql
+      port: 3306

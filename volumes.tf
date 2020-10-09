@@ -101,7 +101,7 @@ resource "null_resource" "create_filesystem_leaf" {
     inline    = [
   "sleep 30",
   "chmod 600 /home/ec2-user/id_rsa",
-	"chmod 755 /home/ec2-user/filesystem.sh",
+  "chmod 755 /home/ec2-user/filesystem.sh",
   "sh -x /home/ec2-user/filesystem.sh"
     ]  
   }
